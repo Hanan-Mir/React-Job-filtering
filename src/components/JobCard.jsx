@@ -78,12 +78,14 @@ else{
                     <p className="w-[90%] h-[1px] bg-gray-500"></p>
                 </div>
                 <div className="mt-[2.5rem] ml-2 flex flex-wrap gap-y-4 text-[1rem] md:w-[100%] " onClick={(e)=>handleFilter(e)}>
-            <span className="mr-[2rem] bg-gray-500 text-white font-semibold px-3 py-2 rounded-lg">{job?.role}</span>
-            <span className="mr-[2rem] bg-gray-500 text-white font-semibold px-3 py-2 rounded-lg">{job?.level}</span>
+            <span className="hover:bg-gray-400 mr-[2rem] bg-gray-500 text-white font-semibold px-3 py-2 rounded-lg">{job?.role}</span>
+            <span className="hover:bg-gray-400 mr-[2rem] bg-gray-500 text-white font-semibold px-3 py-2 rounded-lg">{job?.level}</span>
            
         
-            {job?.languages.map(lng=><span className="mr-[2rem]  bg-gray-500 text-white font-semibold px-3 py-2 rounded-lg">{lng}</span>)}
-           { job?.tools.length>0 && <span className="mr-[2rem] bg-gray-500 text-white font-semibold px-3 py-2 rounded-lg">{job?.tools[0]}</span>}
+            {job?.languages.map(lng=><span className="hover:bg-gray-400 mr-[2rem]  bg-gray-500 text-white font-semibold px-3 py-2 rounded-lg">{lng}</span>)}
+           { job?.tools.length>0 && job?.tools.map(el=>{
+ return <span className="hover:bg-gray-400 mr-[2rem] bg-gray-500 text-white font-semibold px-3 py-2 rounded-lg">{el}</span>
+           }) }
             </div>
             </div>
         </div>
